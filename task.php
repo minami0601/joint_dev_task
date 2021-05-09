@@ -48,12 +48,22 @@ $array2 = [1, 5, 8, 10];
 
   # 以下に回答を記載
 
+  var_export(empty($array1));
+  echo PHP_EOL;
+  var_export(empty($array2));  
+
 echo PHP_EOL;
 
 print("#####q6#####".PHP_EOL);
 $numbers1 = [1, 2, 3, 4, 5];
 
   # 以下に回答を記載
+  
+  foreach($numbers1 as $val) {
+    $numbers2[] = $val * 10;
+  }
+
+  print_r($numbers2);
 
 echo PHP_EOL;
 
@@ -61,6 +71,8 @@ print("#####q7#####".PHP_EOL);
 $array = ["1", "2", "3", "4", "5"];
 
   # 以下に回答を記載
+
+  $array = array_map('intval', $array);
 
   # 以下は変更しないで下さい
 var_dump($array);
@@ -71,6 +83,9 @@ print("#####q8#####".PHP_EOL);
 $programming_languages = ["php","ruby","python","javascript"];
 
   # 以下に回答を記載
+
+  $programming_languages = array_map('ucfirst', $programming_languages);
+  $upper_case_programming_languages = array_map('strtoupper', $programming_languages);
 
   # 以下は変更しないで下さい
 print_r($programming_languages);
@@ -83,6 +98,13 @@ print("#####q9#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
   # 以下に回答を記載
+  
+  foreach($names as $key => $name) {
+    $number = $key + 1;
+    $member[] = "会員No.".$number." ".$name;
+  }
+
+  print_r($member);
 
 echo PHP_EOL;
 
@@ -153,9 +175,9 @@ class User
 $user1 = new User("神里",32,"男");
 $user2 = new User("あじー",32,"男");
 
-$user1->info();
-print("-------------".PHP_EOL);
-$user2->info();
+// $user1->info();
+// print("-------------".PHP_EOL);
+// $user2->info();
 
 echo PHP_EOL;
 
@@ -163,11 +185,11 @@ print("#####q18#####".PHP_EOL);
 
   # コードを追加
 
-$man1 = new Man("あじー",32);
-$man2 = new Man("ゆたぼん",10);
+// $man1 = new Man("あじー",32);
+// $man2 = new Man("ゆたぼん",10);
 
-$man1->introduce();
-$man2->introduce();
+// $man1->introduce();
+// $man2->introduce();
 
 echo PHP_EOL;
 
@@ -183,8 +205,8 @@ class Item{
 }
   # 以下は変更しないで下さい
 
-$book = new Item("ゼロ秒思考");
-print($book->name.PHP_EOL);
+// $book = new Item("ゼロ秒思考");
+// print($book->name.PHP_EOL);
 
 echo PHP_EOL;
 
@@ -203,18 +225,18 @@ class Zoo
 
 }
 
-$zoo = new Zoo("旭山動物園",[ "infant" => 0, "children" => 400, "adult" => 800, "senior" => 500]);
+// $zoo = new Zoo("旭山動物園",[ "infant" => 0, "children" => 400, "adult" => 800, "senior" => 500]);
 
-$human1 = new Human("たま",3);
-$human2 = new Human("ゆたぼん",10);
-$human3 = new Human("あじー",32);
-$human4 = new Human("ぎん",108);
+// $human1 = new Human("たま",3);
+// $human2 = new Human("ゆたぼん",10);
+// $human3 = new Human("あじー",32);
+// $human4 = new Human("ぎん",108);
 
 $humans = [ $human1, $human2, $human3, $human4 ];
 
-foreach($humans as $human){
-  $zoo->info_entry_fee($human);
-}
+// foreach($humans as $human){
+//   $zoo->info_entry_fee($human);
+// }
 
 echo PHP_EOL;
 
