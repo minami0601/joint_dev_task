@@ -48,6 +48,7 @@ $array2 = [1, 5, 8, 10];
 
   # 以下に回答を記載
 
+  
   var_export(empty($array1));
   echo PHP_EOL;
   var_export(empty($array2));  
