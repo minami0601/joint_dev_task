@@ -173,6 +173,12 @@ $data = [ "name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "so
 
   # 以下に回答を記載
 
+  $data2 = [];
+  foreach($data as $v){
+      array_push($data2,$v);
+  }
+  print_r($data2);
+
 echo PHP_EOL;
 
 print("#####q15#####".PHP_EOL);
@@ -180,6 +186,17 @@ $data1 = [ "name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admi
 $data2 = [ "name" => "yamada", "hobby" => "baseball", "role" => "normal" ];
 
   # 以下に回答を記載
+  function array_key($array){
+    if ( array_key_exists('age', $array) ) {
+        echo "OK";
+    } else {
+      echo "NG";
+    }
+  }
+
+  print_r(array_key($data1));
+  echo PHP_EOL;
+  print_r(array_key($data2));
 
 echo PHP_EOL;
 
@@ -192,6 +209,11 @@ $users = [
 ];
 
   # 以下に回答を記載
+
+  foreach($users as $v) {
+    print_r("私の名前は".$v['name']."です。年齢は".$v['age']."歳です。");
+    echo PHP_EOL;
+  }
 
 echo PHP_EOL;
 
