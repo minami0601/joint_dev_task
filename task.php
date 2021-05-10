@@ -113,13 +113,37 @@ print("#####q10#####".PHP_EOL);
 $foods = ["いか","たこ","うに","しゃけ","うにぎり","うに軍艦","うに丼","高級なうに"];
 
   # 以下に回答を記載
-
+  foreach($foods as $food){
+    if(strpos($food, "うに") !== false){
+      echo '好物です';
+    } else {
+      echo 'まぁまぁ好きです';
+    }
+    echo PHP_EOL;
+  }
 echo PHP_EOL;
 
 print("#####q11#####".PHP_EOL);
 $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
 
   # 以下に回答を記載
+  $sports2 = [];
+  
+  foreach($sports as $k => $v){
+    if(is_array($v)){
+      $sports2 = array_merge($sports2, $v);
+    } else {
+      array_push($sports2, $v);
+    }
+  }
+  $sports2 = array_unique($sports2);
+  $sports2 = array_values($sports2);
+
+  print("ユーザーの趣味一覧".PHP_EOL);
+  foreach($sports2 as $key => $sport) {
+    $number = $key + 1;
+    echo "No".$number." ".$sport.PHP_EOL;
+  }
 
 echo PHP_EOL;
 
@@ -127,6 +151,7 @@ print("#####q12#####".PHP_EOL);
 $data = [ "user" => [ "name" => "satou", "age" => 33 ] ];
 
   # 以下に回答を記載
+  print_r($data['user']['name']);
 
 echo PHP_EOL;
 
@@ -135,6 +160,11 @@ $user_data = [ "name" => "神里", "age" => 31, "address" => "埼玉"];
 $update_data = [ "age" => 32, "address" => "沖縄" ];
 
   # 以下に回答を記載
+
+  $user_data['age'] = $update_data['age'];
+  $user_data['address'] = $update_data['address'];
+
+  print_r($user_data);
 
 echo PHP_EOL;
 
