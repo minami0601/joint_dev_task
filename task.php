@@ -222,15 +222,34 @@ class User
 {
 
   # コードを追加
+  public $name;
+  public $age;
+  public $gender;
+
+  public function __construct($name, $age, $gender) {
+    $this->name = $name;
+    $this->age = $age;
+    $this->gender = $gender;
+  }
+
+  function info(){
+    print("名前：".$this->name);
+    print(PHP_EOL);
+    print("年齢：".$this->age);
+    print(PHP_EOL);
+    print("性別：".$this->gender);
+    print(PHP_EOL);
+
+  }
 
 }
 
 $user1 = new User("神里",32,"男");
 $user2 = new User("あじー",32,"男");
 
-// $user1->info();
-// print("-------------".PHP_EOL);
-// $user2->info();
+$user1->info();
+print("-------------".PHP_EOL);
+$user2->info();
 
 echo PHP_EOL;
 
