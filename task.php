@@ -226,7 +226,7 @@ class User
   public $age;
   public $gender;
 
-  public function __construct($name, $age, $gender) {
+  function __construct($name, $age, $gender) {
     $this->name = $name;
     $this->age = $age;
     $this->gender = $gender;
@@ -260,7 +260,7 @@ print("#####q18#####".PHP_EOL);
     public $name;
     public $age;
 
-    public function __construct($name, $age) {
+    function __construct($name, $age) {
       $this->name = $name;
       $this->age = $age;
     }
@@ -287,7 +287,7 @@ print("#####q19#####".PHP_EOL);
 class Item{
   # 以下を修正して下さい
 
-  protected $name;
+  protected $book_name;
 
   function __construct($book_name){
     $this->name = $book_name;
@@ -295,8 +295,8 @@ class Item{
 }
   # 以下は変更しないで下さい
 
-// $book = new Item("ゼロ秒思考");
-// print($book->name.PHP_EOL);
+$book = new Item("ゼロ秒思考");
+print($book->name.PHP_EOL);
 
 echo PHP_EOL;
 
