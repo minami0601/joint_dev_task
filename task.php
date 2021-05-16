@@ -256,12 +256,30 @@ echo PHP_EOL;
 print("#####q18#####".PHP_EOL);
 
   # コードを追加
+  class Man {
+    public $name;
+    public $age;
 
-// $man1 = new Man("あじー",32);
-// $man2 = new Man("ゆたぼん",10);
+    public function __construct($name, $age) {
+      $this->name = $name;
+      $this->age = $age;
+    }
 
-// $man1->introduce();
-// $man2->introduce();
+    function introduce() {
+      if($this->age > 10) {
+        print_r("こんにちは，".$this->name."申します。宜しくお願いいたします。");
+      } else {
+        print_r("はいさいまいど〜，".$this->name."です！！！");
+      }
+    }
+  }
+  
+$man1 = new Man("あじー",32);
+$man2 = new Man("ゆたぼん",10);
+
+$man1->introduce();
+print(PHP_EOL);
+$man2->introduce();
 
 echo PHP_EOL;
 
