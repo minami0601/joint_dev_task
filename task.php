@@ -360,3 +360,22 @@ foreach($humans as $human){
 
 echo PHP_EOL;
 
+print("#####q20#####".PHP_EOL);
+
+for($i = 1; $i <= 30; $i++){
+  if($i % 3 == 0 && $i % 5 == 0) {
+    print_r("FizzBuzz");
+  }elseif($i % 3 == 0 && $i % 7 == 0) {
+    print_r("FizzHoge");
+  }elseif($i % 3 == 0) {
+    print_r("Fizz");
+  }elseif ($i % 5 == 0) {
+    print_r("Buzz");
+  }elseif ($i % 7 == 0) {
+    print_r("Hoge");
+  }else{
+    print_r($i);
+  }
+  print(PHP_EOL);
+}
+
