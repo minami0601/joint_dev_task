@@ -331,13 +331,13 @@ class Zoo
     if($human->age <= 5) {
       print_r($human->name."の入場料金は".$this->price['infant']."です");
       print(PHP_EOL);
-    } elseif($human->age >= 6 && $human->age <= 12) {
+    } elseif($human->age <= 12) {
       print_r($human->name."の入場料金は".$this->price['children']."です");
       print(PHP_EOL);
-    } elseif($human->age >= 13 && $human->age <= 64){
+    } elseif($human->age <= 64){
       print_r($human->name."の入場料金は".$this->price['adult']."です");
       print(PHP_EOL);
-    } elseif($human->age >= 65 && $human->age <= 120){
+    } elseif($human->age <= 120){
       print_r($human->name."の入場料金は ".$this->price['senior']." です");
       print(PHP_EOL);
     }
@@ -363,16 +363,18 @@ echo PHP_EOL;
 print("#####q20#####".PHP_EOL);
 
 for($i = 1; $i <= 30; $i++){
-  if($i % 3 == 0 && $i % 5 == 0) {
-    print_r("FizzBuzz");
-  }elseif($i % 3 == 0 && $i % 7 == 0) {
+  if($i % 7 == 0 && $i % 5 == 0 && $i % 3 == 0){
+    print_r("FizzBuzzHoge");
+  }elseif($i % 7 == 0 && $i % 5 == 0) {
     print_r("FizzHoge");
-  }elseif($i % 3 == 0) {
-    print_r("Fizz");
+  }elseif($i % 5 == 0 && $i % 3 == 0) {
+    print_r("FizzBuzz");
+  }elseif($i % 7 == 0) {
+    print_r("Hoge");
   }elseif ($i % 5 == 0) {
     print_r("Buzz");
-  }elseif ($i % 7 == 0) {
-    print_r("Hoge");
+  }elseif ($i % 3 == 0) {
+    print_r("Fizz");
   }else{
     print_r($i);
   }
